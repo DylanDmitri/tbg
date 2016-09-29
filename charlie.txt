@@ -1,0 +1,72 @@
+LOCATION cave
+a small rocky cave, with a golden door at the back
+behind you lies the mouth of the cave
+
+(leave/exit/out/mouth/cave mouth)
+	player.moveto(path)
+
+
+ITEM gold door
+traits: immovable, lockable passage (cave -> victory)
+
+
+LOCATION victory
+Charrllieeee.... you've done it!
+
+
+LOCATION path
+a narrow path which winds its way down a steep cliff
+at the bottom of the cliff, a forest stretches as far as you can see
+
+(jump/walk/step) off (/edge/cliff)
+	print("you leap from the cliff, plummeting to your death")
+	die()
+
+throw something off cliff
+throw something (into/at) forest
+	print("... the", something, "falls soundlessly into the forest below")
+	player.inventory.pop(something)
+
+(/walk/go) down path
+(/walk/go) (/to/down to) forest
+	player.moveto(forest)
+
+
+LOCATION forest
+a lush forest filled with cute birds and stuff
+there's a cottage nestled between two trees
+you can see the path back up the mountain
+
+(/go/move) cottage
+	player.moveto(cottage)
+
+(/go/climb) (path/mountain)
+	player.moveto(path)
+
+
+LOCATION cottage
+a small wood room, without much furnishing
+
+items; bronze key, silver key
+
+
+ITEM bronze key
+a small key, slightly tarnished, but still in good condition
+
+unlocks gold door
+
+
+ITEM silver key
+a small fancy key, covered with intricate designs
+
+
+
+
+
+
+
+
+
+
+
+
